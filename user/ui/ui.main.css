@@ -1,0 +1,6 @@
+
+#output::before {
+ content: ' ';
+ background: inherit;
+ filter: blur(5px);
+}

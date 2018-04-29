@@ -68,17 +68,12 @@ jo.main        = 'Eden'
 jo.outputLim   = 1200
 jo.packetWrap  = 4
 jo.portraitMax = true
-jo.portraitURL = './core/resources/bg_dragonFire.jpg'
+jo.portraitURL = './core/resources/bg_dragonAscend.jpg'
 jo.timestamp   = true
 jo.title       = 'user' // session-time
 jo.wrapLim     = 3
 jo.userScripts = [
   './user/modules.js',
-  './user/user.js',
-  './user/usr_aliases.js',
-  // combat
-  './user/usr_cb.js', 
-  './user/usr_cb_triggers.js', 
 ]
 
 ja = typeof ja !== 'undefined' ? ja : {}
