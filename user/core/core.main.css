@@ -1,0 +1,38 @@
+
+.Ashtan {
+  color: rgba( 150,  64, 222, 1 ); }
+.Cyrene {
+  color: rgba(  60, 180, 234, 1 ); }
+.Eleusis {
+  color: rgba(  90, 170, 140, 1 ); }
+.Hashan {
+  color: rgba( 244, 179,  66, 1 ); }
+.Mhaldor {
+  color: rgba( 208,  57,  34, 1 ); }
+.Targossas {
+  color: rgba( 144, 210, 196, 1 ); }
+ 
+/* CHAT */
+#chat {
+  z-index: 9997;
+  font-family: 'Georgia', Georgia, 'Lekton';
+  font-size: 9pt;
+  font-family: 'Overpass';
+  font-size: 8pt;
+  line-height: 13pt;
+  background: rgba( 12, 12, 12, 0.88);
+  border: 1px solid rgba( 165, 160, 165, 0.92);
+  position: absolute;
+  right: 2px;
+  top: 3px;
+  width: 500px;
+  max-width: 800px;
+  height: 20%;
+  padding: 0.2em;
+  border: 1px solid rgba( 165, 155, 165, 0.92);
+  border-radius: 5px;
+  overflow-y: scroll;
+  padding: 3px; }
+
+#chat::-webkit-scrollbar {
+  display: none; }
