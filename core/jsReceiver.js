@@ -232,7 +232,9 @@ jm.parse = function() {
       logrTenant.line = q
 
   if (s.match(/^\x1B\[((\d*);){0,2}(\d*)m$/g)) { 
-   jv.orphanMatch = s 
+   jv.orphanMatch = s
+  } else if (s.match(/^$/g) && k == 0) {
+   jv.orphanMatch = s
   } else {
    if (jv.orphanMatch.length > 0) { s = jv.orphanMatch + s; jv.orphanMatch = '' } 
 

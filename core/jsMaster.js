@@ -64,11 +64,11 @@ _t = typeof _t !== 'undefined' ? _t : {}
 jo = typeof jo !== 'undefined' ? jo : {}
 jo.address     = 'achaea.com/socket/'
 jo.echoInput   = false
-jo.main        = 'Jyve'
+jo.main        = 'Eden'
 jo.outputLim   = 1200
 jo.packetWrap  = 4
 jo.portraitMax = true
-jo.portraitURL = './core/resources/bg_dragon1.jpg'
+jo.portraitURL = './core/resources/bg_dragonFire.jpg'
 jo.timestamp   = true
 jo.title       = 'user' // session-time
 jo.wrapLim     = 3

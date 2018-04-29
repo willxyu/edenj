@@ -17,7 +17,6 @@ mm.list = [
  './core/jsKeypressbinding.js',
  './core/jsPrompt.js',
  './core/jsGMCP.js',
- './core/jsScripts.js',
  './core/jsScrollback.js',
  // CORE-3
  // './core/fs.js',

@@ -139,7 +139,7 @@ gmcpEqu = function() {
    dif = jround(dif,gm.decimalpoints)
    dif = dif.toFixed(gm.decimalpoints)
    var s = gm.eqBracket + '&homtht;&sext; Equi:</span> ' + gm.eqColor + dif + 's</span>' + gm.eqBracket + ' &sext;&homtht;</span><br >'
-   s = '<span style="font-size: 14pt">' + s + '</span>'
+   // s = '<span style="font-size: 14pt">' + s + '</span>'
    s = '<span class="mutrigger">&compfn;</span> ' + s
    if (jo.timestamp) {
     var tstmp = now.getTime()
@@ -150,7 +150,7 @@ gmcpEqu = function() {
     s = '<span class="timestamp mute">'+tstmp+'</span>' + s
     s = s.replace('class="timestamp mute"', 'class="timestamp mute" style="font-family: Lekton"') 
    }
-   jprint(s)
+   // jprint(s)
    // jprint('  '+gm.eqBracket+'[  Eq:</span> '+gm.eqColor +dif+'s</span>'+gm.eqBracket+']</span><br>')
   } else if (gmcp.Char.Vitals.eq == '0' && oldEq == '1') {
    gm.equilibriumClock = new Date()
