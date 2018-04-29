@@ -1,0 +1,156 @@
+span.bold {
+  font-weight: 550;
+}
+
+span.bold.cyan {
+  font-weight: normal;
+  color: rgba(127, 255, 0, 1);
+}
+
+span.underline {
+  text-decoration: underline;
+}
+
+span.normal {
+  color: rgba(185,185,185,1);
+  font-weight: normal;
+  text-decoration: none;
+}
+
+span.mute {
+  color: rgba(108,108,108,1);
+  font-weight: normal;
+  text-decoration: none;
+}
+
+span.triggered {
+  color: rgba( 32, 89, 66,1); }
+span.untrigger {
+  color: rgba(132, 89, 66,1); }
+span.mutrigger {
+  color: rgba( 31, 31, 31,1); }
+
+span.self {
+  color: #838383;
+}
+
+span.black {
+  color: rgba(55,55,55,1);
+}
+
+span.red {
+  color: #d08356;
+}
+
+span.green {
+  color: #a2a96f;
+}
+
+span.yellow {
+  color: #e3d96f;
+}
+
+span.blue {
+  color: #8a9597;
+}
+
+span.magenta {
+  color: #be96b3;
+}
+
+span.cyan {
+  color: #74dad9;
+}
+
+span.white {
+  color: #ffffff;
+}
+
+span.black-bg {
+  background: #777777;
+}
+
+span.red-bg {
+  background: #d08356;
+}
+
+span.green-bg {
+  background: #a2a96f;
+}
+
+span.yellow-bg {
+  background: #e3d96f;
+}
+
+span.blue-bg {
+  background: rgba(5,48,68,1);
+  /* background: #8a9597; */
+}
+
+span.magenta-bg {
+  background: #be96b3;
+}
+
+span.cyan-bg {
+  background: rgba(3,130,188,1);
+  /* background: #74dad9; */
+}
+
+span.white-bg {
+  background: rgba(167,173,175,1);
+  /* background: #ffffff; */
+}
+
+span.grey-bg {
+  background: rgba(25,25,25,0.67);
+}
+
+span.echo {
+  color: rgba(125,45,85,1);
+}
+
+span.sysecho {
+  color: rgba(120,116,193,1);	
+}
+
+span.balBracket {
+  /* color: rgba( 10, 45,102,1); */
+  color: rgba( 50, 50,220,1);
+}
+span.bal {
+  color: rgba(100,125,155,1);
+}
+span.eqBracket {
+  color: rgba(125, 50,200,1);
+}
+span.eq {
+  color: rgba(130,105,155,1);
+}
+
+span.darkyellow {
+  color: rgba(175,175,36,1);
+}
+
+span.darkred {
+  color: rgba(185,15,65,1);
+}
+
+span.grey {
+  color: rgba(75,75,75,1);
+}
+
+span.turquoise {
+ color: rgba(80,135,145,1);
+}
+
+span.link {
+ color: rgba(80,135,145,1);
+}
+
+span.violent {
+ color: rgba(161,59,239,1);
+}
+
+span.seagreen {
+ color: rgba(15,115,75,1);
+}

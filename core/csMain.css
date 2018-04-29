@@ -1,0 +1,180 @@
+a:link    {color:inherit; background-color:transparent; text-decoration:underline}
+a:visited {color:inherit; background-color:transparent; text-decoration:underline}
+a:hover   {color:inherit; background-color:transparent; text-decoration:underline} 
+a:active  {color:inherit; background-color:transparent; text-decoration:underline}
+@font-face {
+  font-family: DroidSansMono;
+  src: url('./resources/DroidSansMono.ttf'); }
+@font-face {
+  font-family: Scriptina;
+  src: url('./resources/Scriptina-Pro.otf'); }
+@font-face {
+  font-family: AdobeBlank;
+  src: url('./resources/AdobeBlank.ttf'); }
+@font-face {
+  font-family: Overpass;
+  src: url('./resources/overpass-mono-light.otf'); }
+input:focus {
+  outline: none; }
+.nolink {
+  text-decoration: none; }
+.bgc {
+  background: rgba(1,1,1,0.99); /* #272727 */ }
+::selection {
+  background: rgba(95,95,95,0.36); /* WebKit/Blink Browsers */ }
+  
+body {
+  overflow: hidden;
+  margin: 0px;
+  padding: 0px;
+  background-color: rgba(23,39,45,1);
+  background-attachment: fixed; /* important */ }
+  body::-webkit-scrollbar { 
+    display: none; }
+
+#container {
+  position: absolute;
+  width: 100%;
+  height: 100%; }
+
+#background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -50; }
+
+#logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Scriptina', Times, serif;
+  font-size: 44pt;
+  color: rgba( 14, 14, 14, 0.67);
+  text-shadow: 1px 1px rgba( 144, 144, 144, 0.14 );
+  z-index: -44; }
+
+#output {
+  font-family: 'Overpass','Lekton', Times, serif;
+  font-size: 8pt;
+  color: rgba(195,205,220,1);
+  line-height: 13px;
+  position: absolute;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  white-space: pre-wrap;
+  width: 100%;
+  background-color: rgba(1,1,1,0.67); }
+  #output::-webkit-scrollbar {
+    display: none; }
+
+#addenda {
+  font-family: 'Lekton', Times, serif;
+  font-size: 9pt;
+  line-height: 14px;
+  position: absolute;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  white-space: pre-wrap;
+  width: 35%;
+  height: 60%;
+  right: 0px;
+  top: 20%;
+  background-color: rgba(14,14,14,0.83);
+  border: 1px solid rgba(141,141,141,0.43);
+  border-radius: 5px; }
+
+#panel {
+  position: absolute;
+  left: 0%;
+  bottom: 0%;
+  width: 100%;
+  height: 16px;
+  transition: all 630ms; }
+
+#input {
+    resize: none;
+  position: absolute;
+  width: 100%;
+  bottom: 0%;
+  font-family: 'CodeNewRoman', 'DroidSansMono', 'Aurulent', 'SaxMono', Times, serif;
+  font-size: 10pt;
+  background-color: rgba(1,1,1,0.3);
+  border: none;
+  color: rgba(167,167,167,0.67);
+  outline: none; }
+  #input:focus {
+    background-color: rgba(1,1,1,0.24);}
+
+#reload {
+  background-image: url('./resources/spinner-circle.png');
+  background-size: 100%;
+  height: 14px;
+  width: 14px;
+  cursor: pointer;
+  position: absolute;
+  right: 5px;
+  font-family: 'SaxMono', Times, serif;
+  font-size: 10pt;
+  color: rgba(65,65,65,1);
+  transition: all 630ms; }
+  #reload:hover {
+   transform: rotate(130deg); }
+
+#performance {
+  font-family: 'Lekton';
+  font-size: 9pt;
+  color: rgba(164,164,164,1);
+  position: absolute;
+  right: 21px;
+  bottom: 0%;
+  min-width: 24px; }
+
+#ping {
+  font-family: 'Lekton';
+  font-size: 9pt;
+  color: rgba(164,164,164,1);
+  position: absolute;
+  right: 51px;
+  bottom: 0%;
+  min-width: 24px; }
+
+.timestamp {
+ font-family: 'AdobeBlank';
+}
+
+.hidden {
+  display: none; }
+.prewrap {
+  white-space: prewrap; }
+
+@font-face {
+  font-family: CodeNewRoman;
+  src: url('./resources/Code-New-Roman.otf'); }
+@font-face {
+  font-family: SaxMono;
+  src: url('./resources/SaxMono.ttf'); }
+@font-face {
+  font-family: Aurulent;
+  src: url('./resources/AurulentSansMono-Regular.otf'); }
+@font-face {
+  font-family: Lekton;
+  src: url('./resources/Lekton-Regular.ttf'); }
+@font-face {
+  font-family: LektonBold;
+  src: url('./resources/Lekton-Bold.ttf'); }
+@font-face {
+  font-family: Camingo;
+  src: url('./resources/CamingoCode-Regular.ttf'); }
+@font-face {
+  font-family: Fantasque;
+  src: url('./resources/fantasquesansmono-regular.otf'); }
+@font-face {
+  font-family: SpaceMono;
+  src: url('./resources/SpaceMono-Regular.ttf'); }
+@font-face {
+  font-family: Ubuntu;
+  src: url('./resources/UbuntuMono-R.ttf'); }
+
+.dev {
+  border: 1px solid rgba(1,1,255,1); }

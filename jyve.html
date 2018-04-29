@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+ <head><title>Jyve</title>
+  <link rel='icon' type='image/png' href='./core/resources/icon.png' />
+  <script src='./core/extlib/jquery-3.1.1.js'></script>
+  <script src='./core/extlib/jquery-ui.min.js'></script>
+  <script src='./core/extlib/fastdom.js'></script>
+  <script src='./core/extlib/keypress.js'></script>
+ </head>
+ <body>
+  <div id='container'>
+   <div id='addenda' class='hidden'></div>
+   <div id='output'>
+<input type="file" id="files" name="files[]" multiple />
+<output id="list"></output></div>
+   <div id='panel'>
+    <textarea id='input'></textarea>
+    <div id='reload' onclick='reload()'></div>
+    <div id='performance'></div>
+    <div id='ping'></div>
+   </div>
+
+  </div>
+ </body>
+ <script src='./core/jsJS.js'></script>
+ <script>
+   var input = $('#input')
+   var output = $('#output')
+   var kp = kp || {}
+
+   var log = console.log
+   var getID = document.getElementById
+
+  $(window).on('load', function() {
+   if (jm) { 
+    jm.init()
+    jm.draw()
+    jm.ready() }
+    // keypress.js
+    kp = new window.keypress.Listener()
+    kp.simple_combo('ctrl d', kb.ctrl_d)
+    kp.simple_combo('ctrl s', kb.ctrl_s)
+    kp.simple_combo('ctrl p', kb.ctrl_p)
+    kp.simple_combo('ctrl f', kb.ctrl_f)
+    kp.simple_combo('ctrl r', kb.ctrl_r)
+    kp.simple_combo('ctrl e', kb.ctrl_e)
+    kp.simple_combo('ctrl l', kb.ctrl_l)
+    kp.simple_combo('ctrl k', kb.ctrl_k)
+    kp.simple_combo('ctrl .', kb.ctrl_dot)
+    $(document).on('mousewheel', jm.sbHandler )
+    $(document).on(  'dblclick', jm.dblHandler)
+  })
+ </script>
+</html>
+
+<!--
+  Things to do:
+
+   clickable links
+   fix gmcp
+   manage PROMPT as raiseEvent / registerEvent
+   manage GMCP as raiseEvent / registerEvent
+   manage UI interactions with base elements
+   manage performance data UI-hooks
+   design autologger
+   create a performance viewer
+      container<output[0]/panel{input/ping/performance/reload}>:draggable,resizable
+      ucb/cb >> $('container').css('width')
+      page-wrap events? recode?
+      performance: input/ping/performance/reload,
+                   performance trend, last 200 interactions
+                   show trigger processing time
+                   show decryption time
+                   show display time
+                   running time
+                   total lines/packets parsed so far
+                   gmcp hover display
+      coding display
+
+  -->
