@@ -231,6 +231,7 @@ jm.parse = function() {
       logrTenant = {}
       logrTenant.line = q
 
+  // Not sure why we have orphan lines, but there you go
   if (s.match(/^\x1B\[((\d*);){0,2}(\d*)m$/g)) { 
    jv.orphanMatch = s
   } else if (s.match(/^$/g) && k == 0) {
