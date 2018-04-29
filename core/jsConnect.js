@@ -36,7 +36,8 @@ jm = typeof jm !== 'undefined' ? jm : {}
 
 jm.connect = function(address,port) {
  var address = address || jo.address
- w = new WebSocket('ws://'+address,'binary')
+ w = new WebSocket('wss://'+address,'binary')
+ // w = new WebSocket('ws://'+address,'binary')
  w.binaryType = 'arraybuffer'
  w.onopen    = jm.open
  w.onmessage = jm.receive
