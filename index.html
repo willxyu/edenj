@@ -42,7 +42,11 @@
   if (url.match(/\?code\=[a-z0-9]{20,20}$/i)) {
     var c = url.replace(/.*?\?code\=/,'')
     // exchange this code for access token
-    var uri = 'https://github.com/login/oauth/access_token?client_id=6e13bece29ffd812bb17&client_secret=c377bb5f163d235ca37b3c656fe10f19b085caea&code=' + c
+    var uri  = 'https://cors-anywhere.herokuapp.com/'
+        uri += 'https://github.com/login/oauth/access_token'
+        uri += '?client_id=6e13bece29ffd812bb17&'
+        uri += 'client_secret=c377bb5f163d235ca37b3c656fe10f19b085caea&
+        uri += 'code=' + c
     $.ajax({
      type: 'POST',
      url : uri,
@@ -72,6 +76,7 @@
     $(document).on(  'dblclick', jm.dblHandler)
   })
   
+  /*
   $.ajax({
    url: 'https://gist.githubusercontent.com/willxyu/007443bac03297484cfccd78ba3aa095/raw/1645ea27a99ddddd2b7ec6bdbc3e400ae2664f41/ndb.main.js',
    complete: function(a) {
@@ -86,6 +91,7 @@
      console.log(s)
    }
   })
+  */
   
   /*
   $('#github').on('click', function() {
