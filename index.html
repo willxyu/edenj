@@ -26,7 +26,6 @@
     <div id='performance'></div>
     <div id='ping'></div>
    </div>
-
   </div>
  </body>
  <script src='./core/jsJS.js'></script>
@@ -41,8 +40,16 @@
   // test URL
   var url = window.location.href
   if (url.match(/\?code\=[a-z0-9]{20,20}$/i)) {
-    var t = url.replace(/.*?\?code\=/,'')
-    console.log(t)
+    var c = url.replace(/.*?\?code\=/,'')
+    // exchange this code for access token
+    var uri = 'https://github.com/login/oauth/access_token?client_id=6e13bece29ffd812bb17&client_secret=c377bb5f163d235ca37b3c656fe10f19b085caea&code=' + c
+    $.ajax({
+     type: 'POST',
+     url : uri,
+     success: function(data) {
+       console.log(data.responseText)
+     },
+    })
   }
 
   $(window).on('load', function() {
