@@ -121,12 +121,24 @@ body {
   #reload:hover {
    transform: rotate(130deg); }
 
+#github {
+  background-image: url('./resources/github-logo.png');
+  background-size: 100%;
+  height: 14px;
+  width: 14px;
+  cursor: pointer;
+  position: absolute;
+  right: 25px;
+  transition: all 630ms; }
+  #github:hover {
+   background-image: url('./resources/github-logo_hover.png'); }
+
 #performance {
   font-family: 'Lekton';
   font-size: 9pt;
   color: rgba(164,164,164,1);
   position: absolute;
-  right: 21px;
+  right: 37px;
   bottom: 0%;
   min-width: 24px; }
 
@@ -135,7 +147,7 @@ body {
   font-size: 9pt;
   color: rgba(164,164,164,1);
   position: absolute;
-  right: 51px;
+  right: 71px;
   bottom: 0%;
   min-width: 24px; }
 

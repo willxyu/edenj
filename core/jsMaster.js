@@ -320,6 +320,7 @@ ja.eval = function(str) {
  }
  return out
 }
+
 jsend  = jm.send       // shorthand for non-core & users
 jprint = jm.print      // shorthand for non-core & users
 jaka   = ja.make       // shorthand for non-core & users
