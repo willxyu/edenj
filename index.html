@@ -38,6 +38,13 @@
    var log = console.log
    var getID = document.getElementById
 
+  // test URL
+  var url = window.location.href
+  if (url.match(/\?code\=[a-z0-9]{20,20}$/i)) {
+    var t = url.replace(/.*?\code\=/,'')
+    console.log(t)
+  }
+
   $(window).on('load', function() {
    if (jm) { 
     jm.init()
