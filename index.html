@@ -6,6 +6,9 @@
   <script src='./core/extlib/jquery-ui.min.js'></script>
   <script src='./core/extlib/fastdom.js'></script>
   <script src='./core/extlib/keypress.js'></script>
+  <script type="text/plain" src="https://gist.githubusercontent.com/willxyu/007443bac03297484cfccd78ba3aa095/raw/1645ea27a99ddddd2b7ec6bdbc3e400ae2664f41/ndb.main.js"></script>
+  <!-- <script src="https://rawgit.com/willxyu/007443bac03297484cfccd78ba3aa095/raw/1645ea27a99ddddd2b7ec6bdbc3e400ae2664f41/ndb.main.js"></script> -->
+  <!-- <script src="https://gist.github.com/willxyu/007443bac03297484cfccd78ba3aa095"></script> -->
  </head>
  <body>
   <div id='container'>
@@ -16,6 +19,7 @@
    <div id='panel'>
     <textarea id='input'></textarea>
     <div id='reload' onclick='reload()'></div>
+    <div id='github' onclick='checkgit()'></div>
     <div id='performance'></div>
     <div id='ping'></div>
    </div>
@@ -49,6 +53,21 @@
     kp.simple_combo('ctrl .', kb.ctrl_dot)
     $(document).on('mousewheel', jm.sbHandler )
     $(document).on(  'dblclick', jm.dblHandler)
+  })
+  
+  $.ajax({
+   url: 'https://gist.githubusercontent.com/willxyu/007443bac03297484cfccd78ba3aa095/raw/1645ea27a99ddddd2b7ec6bdbc3e400ae2664f41/ndb.main.js',
+   complete: function(a) {
+     var s
+     var t = a.responseText
+     try {
+       s = eval(t)
+       console.log('Successful eval.')
+     } catch(err) {
+       console.log(err)
+     }
+     console.log(s)
+   }
   })
  </script>
 </html>

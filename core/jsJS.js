@@ -7,8 +7,9 @@ mm.rpad = function(str,len,char) { if (typeof str =='number') { str = str.toStri
 mm.list = [
  // CORE
  './core/jsU.js',          
- './core/jsCSS.js',         // css script  
- './core/jsMaster.js',      // !important 
+ './core/jsCSS.js',         // css script
+ './core/jsMaster.js',      // !important
+ './core/jsGithub.js',      // !important
  './core/jsConnect.js',     // !important
  './core/jsReceiver.js',    // !important
  './core/jsTrigger.js',     // !important
