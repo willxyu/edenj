@@ -38,6 +38,7 @@
    var getID = document.getElementById
 
   // test URL
+  var token
   var url = window.location.href
   if (url.match(/\?code\=[a-z0-9]{20,20}$/i)) {
     var c = url.replace(/.*?\?code\=/,'')
@@ -51,7 +52,20 @@
      type: 'POST',
      url : uri,
      success: function(data) {
-       console.log(data)
+       var RE    = /access_token=(.*?)&/g
+       var match = RE.exec(data)
+           token = match[1]
+       console.log(token)
+       // request GISTS
+       if (typeof token !== 'undefined') {
+        $.ajax({
+          type: 'GET',
+          url : 'https://api.github.com/gists',
+          success: function(m) {
+            console.log(m)
+          }
+        })
+       }
      },
     })
   }
