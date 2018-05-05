@@ -6,6 +6,9 @@
   <script src='./core/extlib/jquery-ui.min.js'></script>
   <script src='./core/extlib/fastdom.js'></script>
   <script src='./core/extlib/keypress.js'></script>
+  <script src='./core/extlib/gistachio.js'></script>
+  <script src='./core/extlib/axios.min.js'></script>
+  <script src="https://unpkg.com/github-api/dist/GitHub.bundle.min.js"></script>
   <script type="text/plain" src="https://gist.githubusercontent.com/willxyu/007443bac03297484cfccd78ba3aa095/raw/1645ea27a99ddddd2b7ec6bdbc3e400ae2664f41/ndb.main.js"></script>
   <!-- <script src="https://rawgit.com/willxyu/007443bac03297484cfccd78ba3aa095/raw/1645ea27a99ddddd2b7ec6bdbc3e400ae2664f41/ndb.main.js"></script> -->
   <!-- <script src="https://gist.github.com/willxyu/007443bac03297484cfccd78ba3aa095"></script> -->
@@ -19,7 +22,7 @@
    <div id='panel'>
     <textarea id='input'></textarea>
     <div id='reload' onclick='reload()'></div>
-    <div id='github' onclick='checkgit()'></div>
+    <a href="https://github.com/login/oauth/authorize?client_id=6e13bece29ffd812bb17&scope=gist" id='github' onclick=''></a>
     <div id='performance'></div>
     <div id='ping'></div>
    </div>
@@ -69,6 +72,19 @@
      console.log(s)
    }
   })
+  
+  /*
+  $('#github').on('click', function() {
+    console.log('aaa')
+    $.ajax({
+      url: 'https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/authorize?client_id=b1b61eb74810488f2135&scope=gist',
+      complete: function(data) {
+        var b = JSON.parse(data.responseText)
+        console.log(b)
+      }
+    })
+  })*/
+  // 
  </script>
 </html>
 
