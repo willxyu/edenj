@@ -62,7 +62,28 @@
           type: 'GET',
           url : 'https://api.github.com/gists?access_token='+token,
           success: function(m) {
-            console.log(m)
+            for (var i=0; i<m.length; i++) {
+             var n = m[i]
+             if (typeof n.files !== 'undefined') {
+               n = n.files
+               for (var k in n) {
+                var detail = n[k]
+                var urn    = detail.raw_url || ''
+                $.ajax({
+                  url: urn,
+                  complete: function(a) {
+                   var s
+                   var t = a.responseText
+                   try {
+                     s = eval(t)
+                   } catch(err) {
+                     console.log(err)
+                   }
+                  }
+                })
+               }
+             }
+            }
           }
         })
        }
@@ -106,18 +127,6 @@
    }
   })
   */
-  
-  /*
-  $('#github').on('click', function() {
-    console.log('aaa')
-    $.ajax({
-      url: 'https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/authorize?client_id=b1b61eb74810488f2135&scope=gist',
-      complete: function(data) {
-        var b = JSON.parse(data.responseText)
-        console.log(b)
-      }
-    })
-  })*/
   // 
  </script>
 </html>
