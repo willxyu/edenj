@@ -17,6 +17,8 @@ ju = (function() {
  var clone = function(obj) {
    var copy
    if (null == obj || 'object' != typeof obj) { return obj }
+   if (obj instanceof String) {
+    return (' ' + obj).slice(1) }
    if (obj instanceof Date) { 
     copy = new Date()
     copy.setTime(obj.getTime())
