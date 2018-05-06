@@ -1,5 +1,6 @@
 var t = {}
 t.scripts = `
+ +script
   lpad   = ju.lpad
   rpad   = ju.rpad
   sp     = typeof sp     !== 'undefined' ? sp     : '|'
@@ -29,6 +30,7 @@ t.scripts = `
   msend = function(str) {
    if (pause) { return }
    jsend(str) }
+ -script
 `
 
 t.aliases = `
