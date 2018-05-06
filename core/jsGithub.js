@@ -47,7 +47,7 @@ jm.git.receiveToken = function(data) {
 
 jm.git.requestGists = function() {
  var token = jm.git.token
- if (typeof token !== 'undefined') {
+ if (typeof token !== 'undefined' || token !== '' ) {
    $.ajax({
     type: 'GET',
     url : 'https://api.github.com/gists?access_token=' + token,
