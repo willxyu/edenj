@@ -226,7 +226,7 @@ jReload = function() { // https://stackoverflow.com/a/44137377/6881999
   jsel.onload = jreloadCB
   // if (document.body.contains(jsel)) { document.getElementsByTagName('head')[0].removeChild(jsel) }
   document.getElementsByTagName('head')[0].appendChild(jsel)
-  JQOUTPUT_.append('<span class="mute"> > Loading <span class="normal"><i>'+ju.rpad(addr,33)+'</i></span>')
+  JQOUTPUT_.append('<span class="mute"> > Loading <span class="normal"><i>'+ju.rpad(addr,30)+'</i></span>')
   function jreloadCB() {
     JQOUTPUT_.append('<span class="mute"> success.</span>')
     jv.reloaderCount++
