@@ -79,7 +79,10 @@
    if (jm) { 
     jm.init()
     jm.draw()
-    jm.ready() }
+    jm.ready()
+    if (jm.git) {
+      jm.git.begin() }
+   }
     // keypress.js
     kp = new window.keypress.Listener()
     kp.simple_combo('ctrl d', kb.ctrl_d)
