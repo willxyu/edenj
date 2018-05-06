@@ -42,13 +42,15 @@ jm.git.loadGists = function(list) {
   // Retrieve & Run EdenJ Mods
   $.ajax({
    url: modURL,
-   complete: function(data) {
+   complete: jm.git.ready,
+  })
+}
+
+jm.git.ready = function(data) {
      var t = data.responseText
      try {
       eval(t)
      } catch(err) { console.log(err) }
-   }
-  })
 }
 
-checkgit = jm.git.check
+GithubSystemReady = jm.git.ready 

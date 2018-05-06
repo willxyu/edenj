@@ -235,9 +235,9 @@ jReload = function() { // https://stackoverflow.com/a/44137377/6881999
       var t = now - jv.reloaderTime
       JQOUTPUT_.append('<span class="mute"> ( <span class="link">'+t+'</span>ms)</span><br >')
       JQOUTPUT_.scrollTop(document.getElementById('output').scrollHeight) // !important
-      if ($('#chat').length) { $('#chat').scrollTop(document.getElementById('chat').scrollHeight) }
-      // highlight!
-      jm.parcel('.hl')
+      // Important!
+      if (typeof GithubSystemReady == 'function') { GithubSystemReady() }
+      if (typeof UserSystemReady == 'function')   { UserSystemReady()   }
     }
     JQOUTPUT_.append('<br >')
     jReload()
