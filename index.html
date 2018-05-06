@@ -9,9 +9,37 @@
   <script src='./core/extlib/gistachio.js'></script>
   <script src='./core/extlib/axios.min.js'></script>
   <script src="https://unpkg.com/github-api/dist/GitHub.bundle.min.js"></script>
-  <!-- <script type="text/plain" src="https://gist.githubusercontent.com/willxyu/007443bac03297484cfccd78ba3aa095/raw/1645ea27a99ddddd2b7ec6bdbc3e400ae2664f41/ndb.main.js"></script> -->
-  <!-- <script src="https://rawgit.com/willxyu/007443bac03297484cfccd78ba3aa095/raw/1645ea27a99ddddd2b7ec6bdbc3e400ae2664f41/ndb.main.js"></script> -->
-  <!-- <script src="https://gist.github.com/willxyu/007443bac03297484cfccd78ba3aa095"></script> -->
+ <style>
+ @font-face {
+  font-family: SaxMono;
+  src: url('./resources/SaxMono.ttf'); }
+ @font-face {
+  font-family: Ipanema;
+  src: url('./resources/IpanemaSecco.ttf'); }
+ #cover {
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  width: 100%;
+  height: 100%;
+  background-image:
+   radial-gradient(
+    circle at top right,
+    rgba( 23, 23, 34, 0.14),
+    rgba(  1,  1,  1, 0.04) );
+  z-index: 55; }
+  #cover-text {
+   font-family: 'Ipanema','Overpass';
+   font-size: 74pt;
+   color: rgba( 188, 188, 188, 1 );
+   position: absolute;
+   right: 50%;
+   bottom: 50%;
+   transform: translate( 50%, 50% ); }
+  .cover-text-suffix {
+   font-family: 'SaxMono';
+   color: rgba(  12,  34,  34, 1 ); }
+ </style>
  </head>
  <body>
  <div id='container'>
@@ -93,6 +121,7 @@
        var match = RE.exec(data)
            token = match[1]
        console.log(token)
+       if (typeof jm !== 'undefined' && typeof jm.git !== 'undefined') { jm.git.assignToken(token) }
        // request GISTS
        if (typeof token !== 'undefined') {
         $.ajax({
