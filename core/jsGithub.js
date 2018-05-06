@@ -19,38 +19,35 @@ jm.git.assignToken = function(token) {
 }
 
 jm.git.loadGists = function(list) {
-  console.log(list)
+  log('Printing retrieved GitHub gists.')
+  log(list)
+  var modsFile = 'EdenJ Mods'
+  var modURL
+  // Acquisition GitHub version of Mods list
   for (var i=0; i<list.length; i++) {
    var n = list[i]
-   if (typeof n.files !== 'undefined') {
+   var desc = n.description
+   if (desc == modsFile) {
      var o = n.files
-     console.log(o)
+     for (var k in o) {
+      var detail = o[k]
+          modURL = detail.raw_url || ''
+      // Should only have 1 file as EdenJ Mods
+      break
+     }
+     break
    }
   }
-  /*
-            for (var i=0; i<m.length; i++) {
-             var n = m[i]
-             if (typeof n.files !== 'undefined') {
-               n = n.files
-               for (var k in n) {
-                var detail = n[k]
-                var urn    = detail.raw_url || ''
-                $.ajax({
-                  url: urn,
-                  complete: function(a) {
-                   var s
-                   var t = a.responseText
-                   try {
-                     s = eval(t)
-                   } catch(err) {
-                     console.log(err)
-                   }
-                  }
-                })
-               }
-             }
-            }
-  */
+
+  // Retrieve & Run EdenJ Mods
+  $.ajax({
+   url: modURL,
+   complete: function(data) {
+     var t = data.responseText
+     try {
+      eval(t)
+     } catch(err) { console.log(err) }
+   })
 }
 
 checkgit = jm.git.check

@@ -115,6 +115,7 @@ t.triggers = `
 `
 
 t.scripts = `
+ sp = typeof sp !== 'undefined' ? sp : '|'
 `
 
 t.secondaries = `
