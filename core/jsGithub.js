@@ -5,6 +5,7 @@ jm = typeof jm !== 'undefined' ? jm : {}
 jm.git       = jm.git       || {}
 
 jm.git.token = jm.git.token || ''
+jm.git.gists = jm.git.gists || []
 
 jm.git.check = function() {
 
@@ -18,9 +19,16 @@ jm.git.assignToken = function(token) {
  jm.git.token = token
 }
 
+jm.git.assignList = function(list) {
+ var copy = ju.clone
+ jm.git.gists = copy(list)
+}
+
 jm.git.loadGists = function(list) {
-  log('Printing retrieved GitHub gists.')
+  log('Initial retrieval complete, searching for EdenJ Mods...')
   log(list)
+  jm.git.assignList(list)
+
   var modsFile = 'EdenJ Mods'
   var modURL
   // Acquisition GitHub version of Mods list
@@ -47,10 +55,10 @@ jm.git.loadGists = function(list) {
 }
 
 jm.git.ready = function(data) {
-     var t = data.responseText
-     try {
-      eval(t)
-     } catch(err) { console.log(err) }
+  var t = data.responseText
+  try {
+   eval(t)
+  } catch(err) { console.log(err) }
 }
 
 GithubSystemReady = jm.git.ready 
