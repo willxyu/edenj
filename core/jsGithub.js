@@ -4,9 +4,10 @@ jm = typeof jm !== 'undefined' ? jm : {}
 
 jm.git       = jm.git       || {}
 
+jm.git.systemReady = false // do not take the previous value as we are refreshing with the system
+
 jm.git.token = jm.git.token || ''
 jm.git.gists = jm.git.gists || []
-
 
 jm.git.assignToken = function(token) {
  jm.git.token = token
@@ -42,10 +43,14 @@ jm.git.receiveToken = function(data) {
  if (match) { token = match[1] }
  console.log('Token: ' + token)
  jm.git.assignToken(token)
- // jm.git.requestGists()
+ 
+ if (jm.git.systemReady = true) { // if we were slow in receiving a token
+   jm.git.requestGists()
+ }
 }
 
 jm.git.requestGists = function() {
+ jm.git.systemReady = true // ! to help a slowly arriving .receiveToken
  var token = jm.git.token
  if (typeof token !== 'undefined' && token !== '' ) {
    $.ajax({
