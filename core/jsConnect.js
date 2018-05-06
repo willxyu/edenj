@@ -45,8 +45,8 @@ jm.connect = function(address,port) {
 }
 
 jm.open = function(e) {
- jo.address = w.url.replace('ws://','')
- log('Connected to ws://'+jo.address+' successfully.')
+ jo.address = w.url.replace('wss://','')
+ log('Connected to wss://'+jo.address+' successfully.')
  jv.sessionTime = new Date()
  jv.connected   = true
  // if (ui && ui.connect) { ui.connect() }
@@ -54,7 +54,7 @@ jm.open = function(e) {
 
 jm.close = function(e) {
  var address = jo.address
- var msg = 'Disconnected from server: ws://'+address
+ var msg = 'Disconnected from server: wss://'+address
  log(msg+'.')
  jm.print(' <span class="sysecho">'+msg+'</span><br>')
  

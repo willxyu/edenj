@@ -14,18 +14,16 @@
   <!-- <script src="https://gist.github.com/willxyu/007443bac03297484cfccd78ba3aa095"></script> -->
  </head>
  <body>
-  <div id='container'>
-   <div id='addenda' class='hidden'></div>
-   <div id='output'>
-   </div>
-   <div id='panel'>
-    <textarea id='input'></textarea>
-    <div id='reload' onclick='reload()'></div>
-    <a href="https://github.com/login/oauth/authorize?client_id=6e13bece29ffd812bb17&scope=gist" id='github' onclick=''></a>
-    <div id='performance'></div>
-    <div id='ping'></div>
-   </div>
-  </div>
+ <div id='container'>
+ <div id='addenda' class='hidden'></div>
+ <div id='output'></div>
+ <div id='panel'>
+  <textarea id='input'></textarea>
+  <div id='reload' onclick='reload()'></div>
+  <a href="https://github.com/login/oauth/authorize?client_id=6e13bece29ffd812bb17&scope=gist" id='github' onclick=''></a>
+  <div id='performance'></div><div id='ping'></div>
+ </div>
+ </div>
   <div id='cover'><div id='cover-text'><span class='cover-text-prefix'>eden</span><span class='cover-text-suffix'>j</span></div></div>
  </body>
  <script src='./core/jsJS.js'></script>
@@ -40,6 +38,14 @@
       })
      })
    
+/*
+   $.ajax({
+    type: 'GET',
+    url:  'https://github.com/login/oauth/authorize?client_ide=6e13bece29ffd812bb17&scope=gist',
+    complete: function(e) {
+     console.log(e)
+    }
+   }) */
 
    var input = $('#input')
    var output = $('#output')
@@ -47,6 +53,26 @@
 
    var log = console.log
    var getID = document.getElementById
+
+  $(window).on('load', function() {
+   if (jm) { 
+    jm.init()
+    jm.draw()
+    jm.ready() }
+    // keypress.js
+    kp = new window.keypress.Listener()
+    kp.simple_combo('ctrl d', kb.ctrl_d)
+    kp.simple_combo('ctrl s', kb.ctrl_s)
+    kp.simple_combo('ctrl p', kb.ctrl_p)
+    kp.simple_combo('ctrl f', kb.ctrl_f)
+    kp.simple_combo('ctrl r', kb.ctrl_r)
+    kp.simple_combo('ctrl e', kb.ctrl_e)
+    kp.simple_combo('ctrl l', kb.ctrl_l)
+    kp.simple_combo('ctrl k', kb.ctrl_k)
+    kp.simple_combo('ctrl .', kb.ctrl_dot)
+    $(document).on('mousewheel', jm.sbHandler )
+    $(document).on(  'dblclick', jm.dblHandler)
+
 
   // test URL
   var token
@@ -73,28 +99,7 @@
           type: 'GET',
           url : 'https://api.github.com/gists?access_token='+token,
           success: function(m) {
-            for (var i=0; i<m.length; i++) {
-             var n = m[i]
-             if (typeof n.files !== 'undefined') {
-               n = n.files
-               for (var k in n) {
-                var detail = n[k]
-                var urn    = detail.raw_url || ''
-                $.ajax({
-                  url: urn,
-                  complete: function(a) {
-                   var s
-                   var t = a.responseText
-                   try {
-                     s = eval(t)
-                   } catch(err) {
-                     console.log(err)
-                   }
-                  }
-                })
-               }
-             }
-            }
+           jm.git.loadGists(m)
           }
         })
        }
@@ -102,24 +107,7 @@
     })
   }
 
-  $(window).on('load', function() {
-   if (jm) { 
-    jm.init()
-    jm.draw()
-    jm.ready() }
-    // keypress.js
-    kp = new window.keypress.Listener()
-    kp.simple_combo('ctrl d', kb.ctrl_d)
-    kp.simple_combo('ctrl s', kb.ctrl_s)
-    kp.simple_combo('ctrl p', kb.ctrl_p)
-    kp.simple_combo('ctrl f', kb.ctrl_f)
-    kp.simple_combo('ctrl r', kb.ctrl_r)
-    kp.simple_combo('ctrl e', kb.ctrl_e)
-    kp.simple_combo('ctrl l', kb.ctrl_l)
-    kp.simple_combo('ctrl k', kb.ctrl_k)
-    kp.simple_combo('ctrl .', kb.ctrl_dot)
-    $(document).on('mousewheel', jm.sbHandler )
-    $(document).on(  'dblclick', jm.dblHandler)
+
   })
   
   /*
