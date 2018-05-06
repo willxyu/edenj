@@ -47,7 +47,8 @@ jm.git.loadGists = function(list) {
      try {
       eval(t)
      } catch(err) { console.log(err) }
-   })
+   }
+  })
 }
 
 checkgit = jm.git.check
