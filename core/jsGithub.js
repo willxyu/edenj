@@ -4,7 +4,8 @@ jm = typeof jm !== 'undefined' ? jm : {}
 
 jm.git       = jm.git       || {}
 
-jm.git.systemReady = false // do not take the previous value as we are refreshing with the system
+jm.git.systemReady  = false // do not take the previous value as we are refreshing with the system
+jm.git.modsFileName = 'EdenJ Mods'
 
 jm.git.token = jm.git.token || ''
 jm.git.gists = jm.git.gists || []
@@ -66,7 +67,7 @@ jm.git.loadGists = function(list) {
   log(list)
   jm.git.assignList(list)
 
-  var modsFile = 'EdenJ Mods'
+  var modsFile = jm.git.modsFileName
   var modURL
   // Acquisition GitHub version of Mods list
   for (var i=0; i<list.length; i++) {
