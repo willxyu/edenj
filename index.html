@@ -9,7 +9,7 @@
   <script src='./core/extlib/gistachio.js'></script>
   <script src='./core/extlib/axios.min.js'></script>
   <script src="https://unpkg.com/github-api/dist/GitHub.bundle.min.js"></script>
-  <script type="text/plain" src="https://gist.githubusercontent.com/willxyu/007443bac03297484cfccd78ba3aa095/raw/1645ea27a99ddddd2b7ec6bdbc3e400ae2664f41/ndb.main.js"></script>
+  <!-- <script type="text/plain" src="https://gist.githubusercontent.com/willxyu/007443bac03297484cfccd78ba3aa095/raw/1645ea27a99ddddd2b7ec6bdbc3e400ae2664f41/ndb.main.js"></script> -->
   <!-- <script src="https://rawgit.com/willxyu/007443bac03297484cfccd78ba3aa095/raw/1645ea27a99ddddd2b7ec6bdbc3e400ae2664f41/ndb.main.js"></script> -->
   <!-- <script src="https://gist.github.com/willxyu/007443bac03297484cfccd78ba3aa095"></script> -->
  </head>
@@ -17,8 +17,7 @@
   <div id='container'>
    <div id='addenda' class='hidden'></div>
    <div id='output'>
-<input type="file" id="files" name="files[]" multiple />
-<output id="list"></output></div>
+   </div>
    <div id='panel'>
     <textarea id='input'></textarea>
     <div id='reload' onclick='reload()'></div>
@@ -27,9 +26,21 @@
     <div id='ping'></div>
    </div>
   </div>
+  <div id='cover'><div id='cover-text'><span class='cover-text-prefix'>eden</span><span class='cover-text-suffix'>j</span></div></div>
  </body>
  <script src='./core/jsJS.js'></script>
  <script>
+   // fade out edenj
+   $('.cover-text-prefix').css({ opacity: 1.0, visibility: 'visible'}).animate({opacity: 0}, 1000,
+     function() {
+      $('.cover-text-suffix').css({ opacity: 1.0, visibility: 'visible'}).animate({opacity: 0}, 1100, function() {
+        $('#cover').css({ opacity: 1.0, display: 'block' }).animate({ opacity: 0 }, 850, function() {
+          $('#cover').css({ display: 'none' })
+        })
+      })
+     })
+   
+
    var input = $('#input')
    var output = $('#output')
    var kp = kp || {}
