@@ -1,4 +1,36 @@
 var t = {}
+t.scripts = `
+  lpad   = ju.lpad
+  rpad   = ju.rpad
+  sp     = typeof sp     !== 'undefined' ? sp     : '|'
+  pause  = typeof pause  !== 'undefined' ? pause  : false
+  target = typeof target !== 'undefined' ? target : 'Tysandr'
+
+  bsend = function(msg) {
+   if (!msg || typeof msg === 'undefined') { return }
+   var cap   = 9
+   var out   = msg.split(sp)
+   var str   = ''
+   var count = 0
+   for (var i=0; i<out.length; i++) {
+     count += 1
+     str   += out[i] + sp
+     if (count >= cap) {
+      count = 0
+      msend(str)
+      str = '' } }
+   msend(str) }
+   
+  fsend = function(str) {
+   // append free actions
+   str = 'stand' + sp + str
+   bsend(str) }
+   
+  msend = function(str) {
+   if (pause) { return }
+   jsend(str) }
+`
+
 t.aliases = `
  +alias +n core.duanathar
   +p ^dn$
@@ -112,10 +144,6 @@ t.triggers = `
   +do
      highlight(matches[1],'orange')
   -en
-`
-
-t.scripts = `
- sp = typeof sp !== 'undefined' ? sp : '|'
 `
 
 t.secondaries = `
