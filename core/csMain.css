@@ -151,6 +151,30 @@ body {
   bottom: 0%;
   min-width: 24px; }
 
+#cover {
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  width: 100%;
+  height: 100%;
+  background-image:
+   radial-gradient(
+    circle at top right,
+    rgba( 23, 23, 34, 0.14),
+    rgba(  1,  1,  1, 0.04) );
+  z-index: 55; }
+  #cover-text {
+   font-family: 'Ipanema','Overpass';
+   font-size: 74pt;
+   color: rgba( 188, 188, 188, 1 );
+   position: absolute;
+   right: 50%;
+   bottom: 50%;
+   transform: translate( 50%, 50% ); }
+  .cover-text-suffix {
+   font-family: 'SaxMono';
+   color: rgba(  12,  34,  34, 1 ); }
+
 .timestamp {
  font-family: 'AdobeBlank';
 }
@@ -170,6 +194,9 @@ body {
   font-family: Aurulent;
   src: url('./resources/AurulentSansMono-Regular.otf'); }
 @font-face {
+  font-family: Ipanema;
+  src: url('./resources/IpanemaSecco.ttf'); }
+@font-face {
   font-family: Lekton;
   src: url('./resources/Lekton-Regular.ttf'); }
 @font-face {
@@ -187,6 +214,9 @@ body {
 @font-face {
   font-family: Ubuntu;
   src: url('./resources/UbuntuMono-R.ttf'); }
+@font-face {
+  font-family: Variane;
+  src: url('./resources/VarianeScript.ttf'); }
 
 .dev {
   border: 1px solid rgba(1,1,255,1); }

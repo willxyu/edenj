@@ -20,10 +20,6 @@ mm.list = [
  './core/jsGMCP.js',
  './core/jsScrollback.js',
  // CORE-3
- // './core/fs.js',
- './core/logr.js',
- './core/map.js',
- './core/mapper.js',
 ]
 mm.v_ip = false       // reload in process
 mm.v_no  = 0          // loaded count

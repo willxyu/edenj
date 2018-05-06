@@ -218,9 +218,6 @@ jm.parse = function() {
  var lines = data.split(/\n/)
  var outgoing = []
   var pxn = new Date()
-  // For logr
-  var logrLandLord = []
-  var logrTenant   = {}
   
  for (var k=0;k<lines.length;k++) {
   var currentTime = new Date()
@@ -228,8 +225,6 @@ jm.parse = function() {
   var s    = lines[k]
   jv.lineMatched = false
   var q = jm.handleTriggers(line) // !important; strip down to 'jm.handleTriggers(line)' without assignment as necessary
-      logrTenant = {}
-      logrTenant.line = q
 
   // Not sure why we have orphan lines, but there you go
   if (s.match(/^\x1B\[((\d*);){0,2}(\d*)m$/g)) { 
@@ -320,10 +315,6 @@ jm.parse = function() {
    // jm.print(s)
    jv.lastpacket = s
    
-   // logr
-   logrTenant.printed = s
-   logrTenant.state   = logr.state()
-   
    // Safety catches
    jv.lineModify = false
    if (line.match('<PROMPT>')) { jt.mods = [] }
@@ -334,16 +325,11 @@ jm.parse = function() {
   // for lastpackets
   if (jv.orphanMatch.length > 0) { } else { 
     outgoing.push(s)
-    // logr
-    logrLandLord.push(logrTenant)
-    logrTenant = {}
   }
  }
  var nxp = new Date()
  // log(nxp - pxn)
  jm.print(outgoing.join(''))
- // logr
- logr.add(logrLandLord)
  // manage lastpackets for wrap
  if (jv.lastpackets.length > jo.packetWrap) { jv.lastpackets.shift() }
  jv.lastpackets.push(outgoing)
