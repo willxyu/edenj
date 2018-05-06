@@ -24,6 +24,13 @@ jm.git.assignList = function(list) {
  jm.git.gists = copy(list)
 }
 
+jm.git.ready = function(data) {
+  var t = data.responseText
+  try {
+   eval(t)
+  } catch(err) { console.log(err) }
+}
+
 jm.git.loadGists = function(list) {
   log('Initial retrieval complete, searching for EdenJ Mods...')
   log(list)
@@ -53,12 +60,3 @@ jm.git.loadGists = function(list) {
    complete: jm.git.ready,
   })
 }
-
-jm.git.ready = function(data) {
-  var t = data.responseText
-  try {
-   eval(t)
-  } catch(err) { console.log(err) }
-}
-
-GithubSystemReady = jm.git.ready 
