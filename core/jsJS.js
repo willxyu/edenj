@@ -8,8 +8,8 @@ mm.list = [
  // CORE
  './core/jsU.js',          
  './core/jsCSS.js',         // css script
- './core/jsMaster.js',      // !important
  './core/jsGithub.js',      // !important
+ './core/jsMaster.js',      // !important
  './core/jsConnect.js',     // !important
  './core/jsReceiver.js',    // !important
  './core/jsTrigger.js',     // !important
