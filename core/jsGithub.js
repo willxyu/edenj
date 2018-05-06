@@ -42,6 +42,11 @@ jm.git.receiveToken = function(data) {
  if (match) { token = match[1] }
  console.log('Token: ' + token)
  jm.git.assignToken(token)
+ // jm.git.requestGists()
+}
+
+jm.git.requestGists = function() {
+ var token = jm.git.token
  if (typeof token !== 'undefined') {
    $.ajax({
     type: 'GET',
@@ -87,3 +92,5 @@ jm.git.ready = function(data) {
    eval(t)
   } catch(err) { console.log(err) }
 }
+
+GithubSystemReady = jm.git.requestGists
