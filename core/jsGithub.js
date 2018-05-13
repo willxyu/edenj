@@ -62,7 +62,8 @@ jm.git.loadGists = function(list) {
   log(list)
   // Replace bar to hide token
   log(window.location.href)
-  window.history.replaceState({}, '', window.location.href)
+  log(window.location.href.replace(/\/code\=.*$/,''))
+  window.history.replaceState({}, '', window.location.href.replace(/\/code\=.*$/,''))
   
   jm.git.assignList(list)
 
