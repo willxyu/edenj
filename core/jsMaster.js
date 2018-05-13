@@ -146,8 +146,6 @@ jm.print = function(line) {
 jm.input = function(data) {
  switch (true) {
   case jv.connectRequest.test(data):
-    // log(jt.trigs.length)
-    // for (var i=0;i<jt.trigs.length;i++) { log(jt.trigs[i]) }
     jm.connect()
     break
   case jv.connectSpecified.test(data):
@@ -237,7 +235,7 @@ jReload = function() { // https://stackoverflow.com/a/44137377/6881999
       JQOUTPUT_.scrollTop(document.getElementById('output').scrollHeight) // !important
       // Important!
       if (typeof GithubSystemReady == 'function') { GithubSystemReady() }
-      if (typeof UserSystemReady == 'function')   { UserSystemReady()   }
+      if (typeof LocalSystemReady  == 'function') { LocalSystemReady()  }
     }
     JQOUTPUT_.append('<br >')
     jReload()

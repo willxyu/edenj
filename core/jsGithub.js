@@ -11,13 +11,11 @@ jm.git.token = jm.git.token || ''
 jm.git.gists = jm.git.gists || []
 
 jm.git.assignToken = function(token) {
- jm.git.token = token
-}
+ jm.git.token = token }
 
 jm.git.assignList = function(list) {
  var copy = ju.clone
- jm.git.gists = copy(list)
-}
+ jm.git.gists = copy(list) }
 
 jm.git.begin = function() {
  var token
@@ -34,21 +32,19 @@ jm.git.begin = function() {
     url : uri,
     success: jm.git.receiveToken,
    })
- }
-}
+ } }
 
 jm.git.receiveToken = function(data) {
  var token = undefined
  var RE    = /access_token=(.*?)&/g
  var match = RE.exec(data)
  if (match) { token = match[1] }
- console.log('Token: ' + token)
+ log('Token: ' + token)
  jm.git.assignToken(token)
  
  if (jm.git.systemReady = true) { // if we were slow in receiving a token
    jm.git.requestGists()
- }
-}
+ } }
 
 jm.git.requestGists = function() {
  jm.git.systemReady = true // ! to help a slowly arriving .receiveToken
@@ -59,12 +55,15 @@ jm.git.requestGists = function() {
     url : 'https://api.github.com/gists?access_token=' + token,
     success: jm.git.loadGists,
    })
- }
-}
+ } }
 
 jm.git.loadGists = function(list) {
   log('Initial retrieval complete, searching for EdenJ Mods...')
   log(list)
+  // Replace bar to hide token
+  log(window.location.href)
+  window.history.replaceState({}, '', window.location.href)
+  
   jm.git.assignList(list)
 
   var modsFile = jm.git.modsFileName
@@ -89,14 +88,12 @@ jm.git.loadGists = function(list) {
   $.ajax({
    url: modURL,
    complete: jm.git.ready,
-  })
-}
+  }) }
 
 jm.git.ready = function(data) {
   var t = data.responseText
   try {
    eval(t)
-  } catch(err) { console.log(err) }
-}
+  } catch(err) { console.log(err) } }
 
 GithubSystemReady = jm.git.requestGists
