@@ -108,6 +108,7 @@ gmcpBal = function() {
    dif = dif / 1000
    dif = jround(dif,gm.decimalpoints)
    dif = dif.toFixed(gm.decimalpoints)
+   gm.balTime = dif
    var s = gm.balanceBracket + '&ecolon;&Lang; Bal:</span> ' + gm.balanceColor + dif + 's</span>' + gm.balanceBracket + ' &Rang;&colone; </span><br >'
    s = '<span style="font-size: 14pt">' + s + '</span>'
    s = '<span class="mutrigger">&compfn;</span> ' + s
@@ -120,7 +121,7 @@ gmcpBal = function() {
     s = '<span class="timestamp mute">'+tstmp+'</span>' + s
     s = s.replace('class="timestamp mute"', 'class="timestamp mute" style="font-family: Lekton"') 
    }
-   jprint(s)
+   // jprint(s)
    // jprint('  '+gm.balanceBracket+'[ Bal:</span> '+gm.balanceColor +dif+'s</span>'+gm.balanceBracket+']</span><br>')
   } else if (gmcp.Char.Vitals.bal == '0' && oldBal == '1') {
    gm.balanceClock = new Date()
@@ -138,6 +139,7 @@ gmcpEqu = function() {
    dif = dif / 1000
    dif = jround(dif,gm.decimalpoints)
    dif = dif.toFixed(gm.decimalpoints)
+   gm.equTime = dif
    var s = gm.eqBracket + '&homtht;&sext; Equi:</span> ' + gm.eqColor + dif + 's</span>' + gm.eqBracket + ' &sext;&homtht;</span><br >'
    // s = '<span style="font-size: 14pt">' + s + '</span>'
    s = '<span class="mutrigger">&compfn;</span> ' + s
