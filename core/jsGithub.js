@@ -61,9 +61,7 @@ jm.git.loadGists = function(list) {
   log('Initial retrieval complete, searching for EdenJ Mods...')
   log(list)
   // Replace bar to hide token
-  log(window.location.href)
-  log(window.location.href.replace(/\/code\=.*$/,''))
-  window.history.replaceState({}, '', window.location.href.replace(/\/code\=.*$/,''))
+  window.history.replaceState({}, '', window.location.href.replace(/\?code\=.*$/,''))
   
   jm.git.assignList(list)
 
