@@ -19,6 +19,7 @@ t.scripts = `
    switch (ui.bg) {
     case 'max':
      $('#portrait').css({
+      'display': 'inline',
       'background-image': 'url("'+ui.img+'")',
       'background-repeat': 'no-repeat',
       'background-size': 'cover',
@@ -37,6 +38,7 @@ t.scripts = `
      break;
     case 'fit':
      $('#portrait').css({
+      'display': 'inline',
       'background-image': 'url("'+ui.img+'")',
       'background-size': 'contain',
       'background-repeat': 'no-repeat',
@@ -61,6 +63,7 @@ t.scripts = `
      break;
     default:
      $('#portrait').css({
+      'display': 'inline',
       'background-image': 'url("'+ui.img+'")',
       'background-repeat': 'no-repeat',
       'position': 'absolute',
