@@ -1,6 +1,6 @@
 <!doctype html>
 <html>
- <head><title>Eden</title>
+ <head><title>eden.j</title>
   <link rel='icon' type='image/png' href='./core/resources/icon.png' />
   <script src='./core/extlib/jquery-3.1.1.js'></script>
   <script src='./core/extlib/jquery-ui.min.js'></script>
@@ -10,6 +10,12 @@
   <script src='./core/extlib/axios.min.js'></script>
   <script src="https://unpkg.com/github-api/dist/GitHub.bundle.min.js"></script>
  <style>
+ @font-face {
+  font-family: Henrik;
+  src: url('./core/resources/Henrik-Regular.otf'); }
+ @font-face {
+  font-family: Scriptina;
+  src: url('./core/resources/Scriptina-Pro.otf'); }
  body {
   overflow: hidden;
   margin: 0px;
@@ -27,11 +33,11 @@
   background-image:
    radial-gradient(
     circle at top right,
-    rgba( 23, 23, 34, 0.14),
-    rgba(  1,  1,  1, 0.04) );
+    rgba( 123, 43, 74, 1),
+    rgba(  1,  1,  1, 1) );
   z-index: 55; }
   #cover-text {
-   font-family: 'Ipanema','Overpass';
+   font-family: 'Henrik','Ipanema','Overpass';
    font-size: 74pt;
    color: rgba( 188, 188, 188, 1 );
    position: absolute;
@@ -39,11 +45,12 @@
    bottom: 50%;
    transform: translate( 50%, 50% ); }
   .cover-text-suffix {
-   font-family: 'SaxMono';
+   font-family: 'Scriptina','SaxMono';
    color: rgba(  12,  34,  34, 1 ); }
  </style>
  </head>
  <body>
+  <div id='cover'><div id='cover-text'><span class='cover-text-prefix'>eden</span><span class='cover-text-suffix'>J</span></div></div>
  <div id='container'>
  <div id='addenda' class='hidden'></div><div id='output'></div>
  <div id='panel'>
@@ -53,7 +60,6 @@
   <div id='performance'></div><div id='ping'></div>
  </div>
  </div>
-  <div id='cover'><div id='cover-text'><span class='cover-text-prefix'>eden</span><span class='cover-text-suffix'>j</span></div></div>
  </body>
  <script src='./core/jsJS.js'></script>
  <script>
@@ -121,4 +127,5 @@
                    total lines/packets parsed so far
                    gmcp hover display
       coding display
+  <div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
   -->

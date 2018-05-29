@@ -53,6 +53,12 @@ t.scripts = `
       '-o-filter' : ui.blur,
       'z-index' : '-5',
      })
+     break;
+    case 'none':
+     $('#portrait').css({
+      'display': 'none',
+     })
+     break;
     default:
      $('#portrait').css({
       'background-image': 'url("'+ui.img+'")',
@@ -98,6 +104,12 @@ t.aliases = `
   +p ^bg\\.fit$
   +do
     ui.bg = 'fit'
+    ui.augment()
+  -en
+ +alias
+  +p ^bg\\.none$
+  +do
+    ui.bg = 'none'
     ui.augment()
   -en
  +alias
