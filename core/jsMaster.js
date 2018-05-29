@@ -39,12 +39,13 @@ jm = typeof jm !== 'undefined' ? jm : {}
 
 /* Client Variables */
 jv = typeof jv !== 'undefined' ? jv : {}
-jv.user             = 'Jyve'
+jv.user             = ''
 jv.connectRequest   = new RegExp('^\-c$')
 jv.connectSpecified = new RegExp('^-c .*$')
 jv.reloadAll        = new RegExp('^-ra$')
 jv.reloadSignal     = new RegExp('^-r$')
 jv.usrReload        = new RegExp('^-ru$')
+jv.connectGithub    = new RegExp('^\-g$')
 jv.connected        = typeof jv.connected        !== 'undefined' ? jv.connected        : false
 jv.lines            = typeof jv.lines            !== 'undefined' ? jv.lines            : 0
 jv.packets          = typeof jv.packets          !== 'undefined' ? jv.packets          : 0
@@ -64,7 +65,7 @@ _t = typeof _t !== 'undefined' ? _t : {}
 jo = typeof jo !== 'undefined' ? jo : {}
 jo.address     = 'achaea.com/socket/'
 jo.echoInput   = false
-jo.main        = 'Eden'
+jo.main        = 'eden.j'
 jo.outputLim   = 1200
 jo.packetWrap  = 4
 jo.portraitMax = true
@@ -134,7 +135,7 @@ jm.ready = function() {
 
 jm.logo = function() {
  var d = $('.logo')
- var u = jv.user || 'Jyve'
+ var u = jv.user || ''
  d.fadeOut( function() { $(this).text(u) }).fadeIn()
 }
 
@@ -160,6 +161,12 @@ jm.input = function(data) {
     break
   case jv.usrReload.test(data):
     jReload()
+    break
+  case jv.connectGithub.test(data):
+    if (jm.git) {
+     var url = jm.git.basic
+     window.location.href = url
+    }
     break
   default:
     if (jo.echoInput) { jm.print('<span class="echo">'+data+'</span><br>') }

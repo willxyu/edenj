@@ -4,6 +4,8 @@ jm = typeof jm !== 'undefined' ? jm : {}
 
 jm.git       = jm.git       || {}
 
+jm.git.basic = 'https://github.com/login/oauth/authorize?client_id=6e13bece29ffd812bb17&scope=gist'
+
 jm.git.systemReady  = false // do not take the previous value as we are refreshing with the system
 jm.git.modsFileName = 'EdenJ Mods'
 
