@@ -506,10 +506,14 @@ jm.readGMCP = function(arr) {
  if (gm) { gm = gm[1] }
  if (cp) {
   cp = cp[1].trim()
+  console.log(update)
+  console.log(cp)
   if (update == 'IRE.Display.Ohmap' && cp == 'start') {
     jv.listenOhmap = true
+    console.log('listen!' + jv.listenOhmap)
   } else if (update == 'IRE.Display.Ohmap' && cp == 'stop') {
     jv.listenOhmap = false
+    console.log('dont listen!' + jv.listenOhmap)
   }
   cp = JSON.parse(cp)
  }
