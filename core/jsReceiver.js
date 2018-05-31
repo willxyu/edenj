@@ -508,10 +508,11 @@ jm.readGMCP = function(arr) {
   cp = cp[1].trim()
   console.log(update)
   console.log(cp)
-  if (update == 'IRE.Display.Ohmap' && cp == 'start') {
+  console.log(cp == '"start"')
+  if (update == 'IRE.Display.Ohmap' && cp == '"start"') {
     jv.listenOhmap = true
     console.log('listen!' + jv.listenOhmap)
-  } else if (update == 'IRE.Display.Ohmap' && cp == 'stop') {
+  } else if (update == 'IRE.Display.Ohmap' && cp == '"stop"') {
     jv.listenOhmap = false
     console.log('dont listen!' + jv.listenOhmap)
   }
