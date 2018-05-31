@@ -92,6 +92,9 @@ gmcpUpdate = function(e) {
     break;
    case 'IRE.Rift.Change':
     break;
+   case 'IRE.Display.Ohmap':
+    if (typeof ss !== 'undefined') { ss.ohmap() }
+    break;
    default:
     log(e)
     break;
