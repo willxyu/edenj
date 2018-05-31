@@ -164,7 +164,7 @@ jm.interpret = function() {
    jv.GASender.push(adonize('IAC-SB-GMCP-Core.Hello { "client": "jyve", "version": "1" }-IAC-SE'))
    jv.GASender.push(adonize('IAC-SB-GMCP-Char.Items.Inv-IAC-SE'))
    jv.GASender.push(adonize('IAC-SB-GMCP-Core.Supports.Set [ "Char 1", "Char.Skills 1", "Char.Items 1" ]-IAC-SE'))
-   jv.GASender.push(adonize('IAC-SB-GMCP-Core.Supports.Add [ "Comm.Channel 1", "IRE.Rift 1", "Room 1" ]-IAC-SE'))
+   jv.GASender.push(adonize('IAC-SB-GMCP-Core.Supports.Add [ "Comm.Channel 1", "IRE.Rift 1", "Room 1", "IRE.Display 1" ]-IAC-SE'))
    jv.handshake = 1
   }
  }
