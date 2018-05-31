@@ -437,7 +437,6 @@ jm.elucidate = function() {
    gmcpFlag = false // log('IAC-SE')
    jm.readGMCP(ouf)
    if (ohmap.length > 0) {
-    console.log(ohmap)
     jv.ohmap = ju.clone(ohmap)
    }
    ouf = []
@@ -450,7 +449,7 @@ jm.elucidate = function() {
    }
    ouf.push(c)
   } else {
-   if (jv.listenOhmap) { ohmap.push(String.fromCharCode(Char)) }
+   if (jv.listenOhmap) { ohmap.push(Char) }
    puf.push(Char)
   }
  }
