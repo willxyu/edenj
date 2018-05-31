@@ -60,6 +60,7 @@ jv.pingTime      = typeof jv.pingTime      !== 'undefined' ? jv.pingTime    : 0
 jv.rawLine       = typeof jv.rawLine       !== 'undefined' ? jv.rawLine     : ''
 jv.listenOhmap   = typeof jv.listenOhmap   !== 'undefined' ? jv.listenOhmap : false
 jv.ohmap         = typeof jv.ohmap         !== 'undefined' ? jv.ohmap       : []
+jv.gagOhmap      = typeof jv.gagOhmap      !== 'undefined' ? jv.gagOhmap    : true
 
 gmcp = typeof gmcp !== 'undefined' ? gmcp : {}
 
@@ -450,7 +451,8 @@ jm.elucidate = function() {
    ouf.push(c)
   } else {
    if (jv.listenOhmap) { ohmap.push(Char) }
-   puf.push(Char)
+   if (jv.listenOhmap && jv.gagOhmap) { } else {
+   puf.push(Char) }
   }
  }
  jv.GABuffer = ju.clone(puf)
