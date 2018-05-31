@@ -13,22 +13,6 @@ t.aliases = `
      var s  = matches[1]
      echoCommand(s)
   -en
-
- +alias +n core.sys.showtriggers
-  +p ^\\.str$
-  +do
-     var s  = ''
-     var c  = 0
-     for (var k in jt.trigs) {
-      c += 1
-      s += '\\n<span class="mute">' + '(' + lpad(c,4) + ') '
-      if (typeof jt.trigs[k].name == 'string' && jt.trigs[k].name.length >= 1) {
-       s += rpad(jt.trigs[k].name,20) + ':: '
-      }
-      s += '<span class="normal">' + jt.trigs[k].pattern + '</span></span>' }
-     jprint(s)
-  -en
-
  +alias +n core.sys.timestamp
   +p ^\\.ts$
   +do

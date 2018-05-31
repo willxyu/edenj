@@ -288,9 +288,10 @@ ja.process = function(s) {
  }
  return bool
 }
-ja.make = function(pattern,output) {
+ja.make = function(pattern,output,name) {
  var RE = new RegExp(pattern)
- ja.als.push({ pattern: pattern, output: output, RE: RE })
+ var name = name || 'unnamed'
+ ja.als.push({ pattern: pattern, output: output, RE: RE, name: name })
 }
 ja.batch = function(list) {
  for (var i=0;i<list.length;i++) {
