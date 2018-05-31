@@ -58,6 +58,8 @@ jv.perfRolling   = typeof jv.perfRolling   !== 'undefined' ? jv.perfRolling : 0
 jv.pingStart     = typeof jv.pingStart     !== 'undefined' ? jv.pingStart   : 0
 jv.pingTime      = typeof jv.pingTime      !== 'undefined' ? jv.pingTime    : 0
 jv.rawLine       = typeof jv.rawLine       !== 'undefined' ? jv.rawLine     : ''
+jv.listenOhmap   = typeof jv.listenOhmap   !== 'undefined' ? jv.listenOhmap : false
+jv.ohmap         = typeof jv.ohmap         !== 'undefined' ? jv.ohmap       : []
 
 gmcp = typeof gmcp !== 'undefined' ? gmcp : {}
 
@@ -414,6 +416,8 @@ jm.primp = function(s,x) {
 }
 
 jm.elucidate = function() {
+ // sigh
+ jv.listenOhmap = false
  var form = 'IAC-SB-GMCP-message-!IAC-IAC-SE'
  var out = []
  var outPositions = []; var outTemp = '';
@@ -432,6 +436,10 @@ jm.elucidate = function() {
   if (Char === 255 && CharNext === 240 && CharBefore != 255) {
    gmcpFlag = false // log('IAC-SE')
    jm.readGMCP(ouf)
+   if (jv.ohmap.length > 0) {
+    console.log(jv.ohmap)
+    jv.ohmap = []
+   }
    ouf = []
   }
   if (gmcpFlag) {
@@ -442,6 +450,7 @@ jm.elucidate = function() {
    }
    ouf.push(c)
   } else {
+   if (jv.listenOhmap) { jv.ohmap.push(Char) }
    puf.push(Char)
   }
  }
@@ -497,7 +506,8 @@ jm.readGMCP = function(arr) {
  if (gm) { gm = gm[1] }
  if (cp) {
   cp = cp[1].trim()
-  cp = JSON.parse(cp)	
+  console.log(cp)
+  cp = JSON.parse(cp)
  }
  var stringToObject = function(str, type) {
   type = type || "object";  // can pass "function"
