@@ -416,8 +416,8 @@ jm.primp = function(s,x) {
 }
 
 jm.elucidate = function() {
- // sigh
- jv.listenOhmap = false
+ jv.listenOhmap = false // sigh
+ var ohmap = []
  var form = 'IAC-SB-GMCP-message-!IAC-IAC-SE'
  var out = []
  var outPositions = []; var outTemp = '';
@@ -436,9 +436,9 @@ jm.elucidate = function() {
   if (Char === 255 && CharNext === 240 && CharBefore != 255) {
    gmcpFlag = false // log('IAC-SE')
    jm.readGMCP(ouf)
-   if (jv.ohmap.length > 0) {
-    console.log(jv.ohmap)
-    jv.ohmap = []
+   if (ohmap.length > 0) {
+    console.log(ohmap)
+    jv.ohmap = ju.clone(ohmap)
    }
    ouf = []
   }
@@ -450,7 +450,7 @@ jm.elucidate = function() {
    }
    ouf.push(c)
   } else {
-   if (jv.listenOhmap) { jv.ohmap.push(Char) }
+   if (jv.listenOhmap) { ohmap.push(String.fromCharCode(Char)) }
    puf.push(Char)
   }
  }
@@ -506,15 +506,10 @@ jm.readGMCP = function(arr) {
  if (gm) { gm = gm[1] }
  if (cp) {
   cp = cp[1].trim()
-  console.log(update)
-  console.log(cp)
-  console.log(cp == '"start"')
   if (update == 'IRE.Display.Ohmap' && cp == '"start"') {
     jv.listenOhmap = true
-    console.log('listen!' + jv.listenOhmap)
   } else if (update == 'IRE.Display.Ohmap' && cp == '"stop"') {
     jv.listenOhmap = false
-    console.log('dont listen!' + jv.listenOhmap)
   }
   cp = JSON.parse(cp)
  }
