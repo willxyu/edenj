@@ -284,7 +284,7 @@ jm.timestamp = function(str) {
  } else {
    s = '<span class="sytrigger">&compfn;</span> ' + s
  }
- var t = new Date().getTime()
+ var t = new Date()
  var m = t.getMinutes()
  var n = t.getSeconds()
  var o = t.getMilliseconds()
