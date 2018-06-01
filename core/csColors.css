@@ -29,6 +29,8 @@ span.untrigger {
   color: rgba(132, 89, 66,1); }
 span.mutrigger {
   color: rgba( 31, 31, 31,1); }
+span.sytrigger {
+  color: rgba(120, 116, 193, 1); }
 
 span.self {
   color: #838383;

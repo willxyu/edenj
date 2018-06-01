@@ -276,6 +276,25 @@ jm.evalscript = function(s) { // !important
  }
 }
 
+jm.timestamp = function(str) {
+ var s = ''
+ var str = str || ''
+ if (str.match('<PROMPT>')) {
+   s = '<span class="mutrigger">&compfn;</span> ' + s
+ } else {
+   s = '<span class="sytrigger">&compfn;</span> ' + s
+ }
+ var t = new Date().getTime()
+ var m = t.getMinutes()
+ var n = t.getSeconds()
+ var o = t.getMilliseconds()
+     t = ju.lpad(m,2,'0') + ':' + ju.lpad(n,2,'0') + ':' + ju.lpad(o,3,'0') + ' '
+     s = '<span class="timestamp mute">' + t + '</span>' + s
+ if (jo.timestamp) { s = s.replace('class="timestamp mute"', 'class="timestamp mute" style="font-family: Lekton"') }
+ 
+ return s
+}
+
 ja.process = function(s) {
  var bool = false
  for (var i=0;i<ja.als.length;i++) {
