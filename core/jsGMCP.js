@@ -97,9 +97,9 @@ gmcpUpdate = function(e) {
     break;
    default:
     log(e)
-    if (typeof sys !== 'undefined') { sys.gmcp(e) }
     break;
- }
+  }
+  if (typeof sys !== 'undefined') { sys.gmcp(e) }
 }
 
 gmcpBal = function() {
