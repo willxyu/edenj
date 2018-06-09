@@ -25,75 +25,47 @@ gm.iconsrc          = './core/resources/icon.png'
 
 gmcpUpdate = function(e) {
   switch (e) {
-   case 'Room.Info':
-    if (typeof b !== 'undefined') { b.gmcpArea(); b.act() }
-    // if (cbu) { cbu.vars.players = []; cbu.refreshNames() }
+   case 'Room.Info'              :
     break;
-   case 'Room.Players':
-    if (typeof cui !== 'undefined') { cui.updateInroom('Players',gmcp.Room.Players); cui.refreshNames() }
-    break;
-   case 'Room.AddPlayer' :
-    if (typeof cui !== 'undefined') { cui.updateInroom('AddPlayer',gmcp.Room.AddPlayer); cui.refreshNames() }
-    break;
-   case 'Room.RemovePlayer':
-    if (typeof cui !== 'undefined') { cui.updateInroom('RemovePlayer',gmcp.Room.RemovePlayer); cui.refreshNames() }
+   case 'Room.Players'           :
+   case 'Room.AddPlayer'         :
+   case 'Room.RemovePlayer'      :
     break;
    case 'Char.Vitals':
     gmcpBal()
     gmcpEqu()
     gm.health()
     gm.mana()
-    if (typeof b !== 'undefined') { b.gmcpVitals(); b.act() }
     break;
-   case 'Char.Status':
+   case 'Char.Status'            :
     gm.status()
-    if (typeof me !== 'undefined') { me.gmcp.status() }
-    if (typeof b !== 'undefined') { b.gmcpStatus() }
     break;
-   case 'Char.StatusVars':
+   case 'Char.StatusVars'        :
     break;
-   case 'Char.Defences.List':
+   case 'Char.Defences.List'     :
+   case 'Char.Defences.Add'      :
+   case 'Char.Defences.Remove'   :
     break;
-   case 'Char.Defences.Add':
-    break;
-   case 'Char.Defences.Remove':
-    break;
-   case 'Char.Afflictions.List':
-    if (typeof me !== 'undefined') { me.gmcp.affs() }
-    break;
+   case 'Char.Afflictions.List'  :
    case 'Char.Afflictions.Remove':
-    if (typeof me !== 'undefined') { me.gmcp.takeaff() }
+   case 'Char.Afflictions.Add'   :
     break;
-   case 'Char.Afflictions.Add':
-    if (typeof me !== 'undefined') { me.gmcp.giveaff() }
+   case 'Char.Skills.Groups'     :
     break;
-   case 'Char.Skills.Groups':
+   case 'Char.Items.List'        :
+   case 'Char.Items.Add'         :
+   case 'Char.Items.Remove'      :
+   case 'Char.Items.Update'      :
     break;
-   case 'Char.Items.List':
-    if (typeof b !== 'undefined') { b.gmcpList() }
+   case 'Comm.Channel.List'      :
+   case 'Comm.Channel.Text'      :
+   case 'Comm.Channel.Start'     :
+   case 'Comm.Channel.End'       :
     break;
-   case 'Char.Items.Add':
+   case 'IRE.Rift.List'          :
+   case 'IRE.Rift.Change'        :
     break;
-   case 'Char.Items.Remove':
-    break;
-   case 'Char.Items.Update':
-    break;
-   case 'Comm.Channel.List':
-    break;
-   case 'Comm.Channel.Text':
-    // if (ugm) { ugm.text() }
-    // if (typeof chat !== 'undefined') { chat.packet() }
-    break;
-   case 'Comm.Channel.Start':
-    break;
-   case 'Comm.Channel.End':
-    break;
-   case 'IRE.Rift.List':
-    break;
-   case 'IRE.Rift.Change':
-    break;
-   case 'IRE.Display.Ohmap':
-    if (typeof ss !== 'undefined') { ss.ohmap() }
+   case 'IRE.Display.Ohmap'      :
     break;
    default:
     log(e)
